@@ -1,0 +1,22 @@
+.env
+.env.local
+.env.*.local
+__pycache__/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+
+# Persistence files
+scraped_urls.json
+*.json.bak
+
+# Log files
+*.log
+logs/
