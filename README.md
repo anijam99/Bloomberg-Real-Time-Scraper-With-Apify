@@ -2,7 +2,7 @@
 
 A Python pipeline that continuously scrapes Bloomberg news articles using Apify's Bloomberg Article Scraper actor. Supports real-time continuous scraping via the Bloomberg sitemap and single-article mode for one-off scrapes.
 
-- ## Apify Actor: https://apify.com/jamie_tran/bloomberg-article-scraper
+- **Apify Actor**: https://apify.com/jamie_tran/bloomberg-article-scraper
 
 ## Features
 
