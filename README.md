@@ -2,6 +2,8 @@
 
 A Python pipeline that continuously scrapes Bloomberg news articles using Apify's Bloomberg Article Scraper actor. Supports real-time continuous scraping via the Bloomberg sitemap and single-article mode for one-off scrapes.
 
+- ## Apify Actor: https://apify.com/jamie_tran/bloomberg-article-scraper
+
 ## Features
 
 - **Real-Time Mode**: Continuously polls Bloomberg's news sitemap for new articles
@@ -124,6 +126,70 @@ python scraper.py --mode single --url "https://www.bloomberg.com/news/articles/.
 
 ## Output
 
+### Sample Data Portion
+```
+"abstract": [],
+    "archived": false,
+    "aiSummary": {
+      "text": [
+        "Strategists are projecting a relatively bullish 11% gain for the S&P 500 Index over the next 12 months, but this assessment may not be helpful for investment strategy.",
+        "The S&P 500 Index's valuations are already elevated, making it imperative for investors to avoid hubris and complacency.",
+        "The setup for 2026 has an extraordinary range of potential outcomes, with the upside implied by strategists not doing justice to the nuance and uncertainty of the market."
+      ],
+      "appliedAt": "2025-12-22T11:08:36.987Z",
+      "__typename": "AISummary"
+    },
+    "adTargeting": {
+      "page": "article",
+      "__typename": "AdTargeting",
+      "contextTopics": "wall-street,artificial-intelligence,earnings,government,economic-growth,economics,stocks,utilities,infrastructure",
+      "contextRegion": "US",
+      "contextCountry": "US",
+      "contextClassification": "markets,finance,technology",
+      "contextIndexes": "SPX:IND",
+      "contextTickers": "BLSH:US,NVDA:US,AAPL:US,GOOGL:US,MSFT:US,AVGO:US,1937664D:US",
+      "contextTagTypes": "Topic",
+      "adCode": "bloomberg/opinion/markets/article",
+      etc...
+    "body": {
+      "type": "document",
+      "content": [
+        {
+          "type": "inline-newsletter",
+          "data": {
+            "position": "top"
+          },
+          "content": []
+        },
+        {
+          "type": "paragraph",
+          "data": {},
+          "content": [
+            {
+              "type": "text",
+              "value": "It’s crystal ball season again on Wall Street — the time when strategists attempt the impossible task of divining where the S&P 500 Index will end the next calendar year. This time around, "
+            },
+            {
+              "type": "link",
+              "data": {
+                "href": "bbg://news/stories/T7DUAXT96OSJ",
+                "itemprop": "StoryLink",
+                "itemscope": "itemscope",
+                "target": "_blank",
+                "destination": {
+                  "bbg": "bbg://news/stories/T7DUAXT96OSJ"
+                }
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "value": "strategists are projecting"
+                }
+              ]
+            },
+            etc...
+```
+
 ### Console Output
 
 The scraper logs all activity to the console:
@@ -147,19 +213,12 @@ Scraped article data is stored in **Apify Datasets**:
 3. Find datasets named with the run IDs shown in the console output
 4. View, download (JSON, CSV, Excel), or export the data
 
-Each scraped article includes:
-- `title`: Article headline
-- `url`: Original Bloomberg URL
-- `author`: Article author(s)
-- `publishedAt`: Publication date/time
-- `content`: Full article text
-- Additional metadata
 
 ## Rate Limits & Cost Control
 
 ### Apify Costs
 
-The scraper uses my `jamie_tran/bloomberg-article-scraper` actor which consumes Apify compute units:
+The scraper uses the `jamie_tran/bloomberg-article-scraper` actor which consumes Apify compute units:
 
 - **Free tier**: $5/month in credits (new accounts)
 - **Estimated cost**: ~$0.01-0.05 per article (to be changed)
